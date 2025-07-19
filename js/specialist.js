@@ -28,8 +28,8 @@ const createSpecialistList = (column, specialists) => {
       </div>
       ${data.audio ? `
         <div class="button-wrap specialist-item-button-wrap">
-          <a class="button button-blue button-audio specialist-item-button" href="${data.audio}" target="_blank" rel="noopener">
-            音声サンプルを聴く
+          <a class="button button-red button-blank button-small2" href="${data.audio}" target="_blank" rel="noopener">
+            サンプル音声（vimeoで聴く）
           </a>
         </div>` : ''}
     `;

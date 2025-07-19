@@ -230,20 +230,78 @@
   }
 }
 
+@media (min-width: 769px) { /* PC時のブレイクポイント（769px）は必要に応じて調整してください */
 
-
-
-@media (min-width: 769px) { 
-  .organizer-grid-gmarc li:nth-child(3) {
-    position: relative; 
+  /* 1. 全体のグリッド設定 (ギャップの調整) */
+  .my-custom-layout.grid.organizer-grid-gmarc { /* ★新クラス追加 */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2カラム */
+    grid-template-rows: auto auto auto; /* 1行目: li1, li2 / 2行目: li3 / 3行目: li4 */
+    row-gap: 40px; /* 行間のギャップを40pxに設定 */
+    column-gap: 16px; /* 列間のギャップを16pxに設定 */
   }
 
-  .organizer-grid-gmarc li:nth-child(4) {
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100%; 
-    text-align: center; 
+  /* 2. 1つ目と2つ目のliの配置 */
+  .my-custom-layout.grid.organizer-grid-gmarc li:nth-child(1) { /* ★新クラス追加 */
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .my-custom-layout.grid.organizer-grid-gmarc li:nth-child(2) { /* ★新クラス追加 */
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* 3. 3つ目のliの配置と幅の調整 */
+  .my-custom-layout.grid.organizer-grid-gmarc li.gap16:nth-child(3) { /* ★新クラス追加 */
+    grid-column: 1 / span 2; /* 2カラム全体を使う */
+    grid-row: 2; /* 2行目に配置 */
+    max-width: 52%; /* 親要素の50%の幅に制限 */
+    margin: 0 auto; /* 制限した幅の中で中央に配置 */
+    text-align: left !important; /* li自体のテキストを左寄せに */
+  }
+
+  /* 3つ目のli内の画像は中央寄せにする */
+  .my-custom-layout.grid.organizer-grid-gmarc li.gap16:nth-child(3) img { /* ★新クラス追加 */
+    display: block; /* 画像をブロック要素に */
+    margin-left: auto;
+    margin-right: auto; /* 左右マージンautoで中央寄せ */
+  }
+
+  /* 3つ目のli内の「特長」のpタグは左寄せ */
+  .my-custom-layout.grid.organizer-grid-gmarc li.gap16:nth-child(3) p.text-bold { /* ★新クラス追加 */
+    text-align: left !important;
+  }
+
+  /* ul.list の幅を100%に強制設定 */
+  .my-custom-layout.grid.organizer-grid-gmarc li.gap16:nth-child(3) ul.list { /* ★新クラス追加 */
+    text-align: left !important; /* テキストは左寄せを維持 */
+    margin-left: 0 !important;   /* 左マージンを確実にリセット */
+    list-style-position: outside !important; /* マーカーを外側に表示 */
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3つ目のli内の div 要素（特長とリストを囲むもの）の調整 */
+  .my-custom-layout.grid.organizer-grid-gmarc li.gap16:nth-child(3) div { /* ★新クラス追加 */
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 4. 4つ目のliの配置と幅の調整 */
+  .my-custom-layout.grid.organizer-grid-gmarc li.gap40:nth-child(4) { /* ★新クラス追加 */
+    grid-column: 1 / span 2; /* 2カラム全体を使う */
+    grid-row: 3; /* 3行目に配置 */
+    max-width: 50%; /* 親要素の50%の幅に制限 */
+    margin: 0 auto; /* 制限した幅の中で中央に配置 */
+
+    display: flex; /* Flexコンテナにする */
+    flex-direction: column; /* 子要素を縦に並べる */
+    justify-content: center; /* 垂直方向中央揃え */
+    align-items: center; /* 水平方向中央揃え */
+    text-align: center !important; /* li内のテキストを中央揃えに */
   }
 }
 
