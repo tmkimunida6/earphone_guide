@@ -240,8 +240,8 @@
   max-width: none;
   height: 61px;
   font-size: 1.25rem;
-  color: var(--color-blue);
-  border-color: var(--color-blue);
+  /*color: var(--color-blue);*/
+  /*border-color: var(--color-blue);*/
 }
 @media screen and (max-width: 350px) {
   .explain-teaser-button-group {
