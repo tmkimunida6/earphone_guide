@@ -578,7 +578,7 @@ p {
 @media screen and (max-width: 640px) {
   .button,
   .button-outline {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
   }
   .button-more,
   .button-small {
