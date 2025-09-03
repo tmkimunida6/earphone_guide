@@ -15,7 +15,7 @@ const handleCurrentPage = () => {
   const isSpecialistPage = currentPath === '/explain/specialist/';
 
   if(isBarrierfreePage) {
-    const barrierfreeLink = document.querySelector('.js-handle-current-page a[href="/support/"]');
+    const barrierfreeLink = document.querySelector('.js-handle-current-page a[href="/organizer/"]');
     barrierfreeLink?.classList.add('header-link-current');
   } else if(isSpecialistPage) {
     const specialistLink = document.querySelector('.js-handle-current-page a[href="/explain/specialist/"]');
